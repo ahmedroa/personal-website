@@ -29,7 +29,7 @@
         <p class="status"><span class="status-dot"></span>متاح للعمل</p>
         <p class="subtitle">مبرمج تطبيقات</p>
         <p class="hero-description">
-            محترف بتطوير الواجهات الأمامية والواجهات الخلفية لتطبيقات الجوال كما أعمل على تطوير لوحات التحكم المرتبطة بالتطبيقات، أعمل قليلاً على تطوير الويب
+            مبرمج تطبيقات iOS و Android قادر على تحويل أفكارك إلى تطبيقات احترافية يحبها المستخدمين
         </p>
         <div class="hero-actions">
             <a href="cv.pdf" download="Ahmed_Khaled_CV.pdf" class="cv-download-btn">
@@ -148,23 +148,23 @@
         <div class="projects-grid">
             <div class="project-card" style="background-image: url('img/prodact.png');">
                 <div class="project-icon">
-                    <i class="fas fa-bed"></i>
+                    <img src="img/mnzil.jpg" alt="منزل" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
                 <h3>منزل</h3>
                 <p>تطبيق لحجز الأسرّة بالسكن العمالي مع اختيار السرير العلوي أو السفلي والدفع بسهولة.</p>
             </div>
 
-            <div class="project-card" style="background-image: url('img/prodact.png');">
+            <div class="project-card" style="background-image: url('img/meras.png');">
                 <div class="project-icon">
-                    <i class="fas fa-map-marked-alt"></i>
+                    <img src="img/merass-icon.jpg" alt="مراس" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
                 <h3>مراس</h3>
-                <p>تطبيق يشمل خرائط قوقل والتحقق من رقم الجوال وعرض الخدمات.</p>
+                <p>نخصّص لك الصوت اللي يشبهك 🎧 | استمع وكأن المحتوى صُمم خصيصاً لك</p>
             </div>
 
             <div class="project-card" style="background-image: url('img/prodact.png');">
                 <div class="project-icon">
-                    <i class="fas fa-shield-alt"></i>
+                    <img src="img/siyaj.png" alt="سياج" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
                 <h3>سياج</h3>
                 <p>تطبيق للأمن والحماية مع ميزات متقدمة لحماية الممتلكات والمنشآت.</p>
@@ -194,31 +194,40 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
-        <h2 class="section-title">التواصل</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 40px;">أريد أن أسمع منك</p>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>العنوان</h3>
-                <p>المملكة العربية السعودية</p>
+        <div class="contact-header">
+            <div class="contact-icon-wrapper">
+                <i class="fas fa-envelope"></i>
             </div>
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>البريد الإلكتروني</h3>
-                <p>dev.ahmed10@gmail.com</p>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <h3>رقم الجوال</h3>
-                <p>+966548828730</p>
-            </div>
+            <h2 class="section-title">نشتغل سوا ؟</h2>
+            <p class="contact-subtitle">املأ النموذج أدناه وسأرد عليك في أقرب وقت</p>
         </div>
+        
+        <form class="contact-form-simple" id="contactForm">
+            <div class="form-group-simple">
+                <label for="name">الاسم*</label>
+                <input type="text" id="name" name="name" placeholder="ادخل اسمك الكامل" required>
+            </div>
+            
+            <div class="form-group-simple">
+                <label for="email">البريد الالكتروني*</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+            
+            <div class="form-group-simple">
+                <label for="phone">رقم الجوال*</label>
+                <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
+            </div>
+            
+            <div class="form-group-simple">
+                <label for="message">الرسالة*</label>
+                <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                إرسال الرسالة
+            </button>
+        </form>
     </section>
 
     <!-- Footer -->

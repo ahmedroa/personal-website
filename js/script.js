@@ -225,3 +225,36 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     });
 }
 
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value
+        };
+        
+        // Log form data (in production, send to server)
+        console.log('Form Data:', formData);
+        
+        // Show success message
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح!';
+        submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+        
+        // Reset form after 2 seconds
+        setTimeout(() => {
+            this.reset();
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.background = '';
+        }, 2000);
+    });
+}
+
