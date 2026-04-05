@@ -8,44 +8,89 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Notebook Background -->
-    <div class="animated-bg">
-        <div class="notebook-paper"></div>
-        <div class="notebook-margin"></div>
-        <div class="notebook-spiral"></div>
-    </div>
 
     <!-- Cursor Follower -->
     <div class="cursor-follower"></div>
 
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">أ.خ</div>
+        <div class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link active">الرئيسية</a>
+            <a href="#skills" class="nav-link">المهارات</a>
+            <a href="#services" class="nav-link">الخدمات</a>
+            <a href="#projects" class="nav-link">المشاريع</a>
+            <a href="#gallery" class="nav-link">معرض الصور</a>
+            <a href="#contact" class="nav-link">التواصل</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="profile-image-container">
-            <div class="profile-image">
-                <i class="fas fa-user"></i>
+
+        <!-- Spinning Circular Badge -->
+        <div class="hero-badge">
+            <svg class="badge-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <path id="textCircle" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0"/>
+                </defs>
+                <text fill="currentColor" font-size="11.5" letter-spacing="2.5">
+                    <textPath href="#textCircle">مبرمج تطبيقات  ✦  Flutter Developer  ✦  </textPath>
+                </text>
+            </svg>
+            <div class="badge-icon">
+                <i class="fas fa-mobile-alt"></i>
             </div>
         </div>
-        <h1>أحمد خالد</h1>
-        <p class="status"><span class="status-dot"></span>متاح للعمل</p>
-        <p class="subtitle">مبرمج تطبيقات</p>
-        <p class="hero-description">
-            مبرمج تطبيقات iOS و Android قادر على تحويل أفكارك إلى تطبيقات احترافية يحبها المستخدمين
-        </p>
-        <div class="hero-actions">
-            <a href="cv.pdf" download="Ahmed_Khaled_CV.pdf" class="cv-download-btn">
-                <i class="fas fa-download"></i>
-                تحميل السيرة الذاتية
-            </a>
-            <div class="social-links">
-                <a href="https://wa.me/966548828730" target="_blank" class="social-link" aria-label="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://x.com" target="_blank" class="social-link" aria-label="X (Twitter)">
-                    <img src="img/x-removebg-preview.png" alt="X (Twitter)">
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+
+        <div class="hero-inner">
+            <!-- Hero Text (right in RTL) -->
+            <div class="hero-text">
+                <p class="hero-status"><span class="status-dot"></span>متاح للعمل</p>
+                <h1 class="hero-heading">
+                    مرحباً!<br>
+                    اسمي<br>
+                    <span class="name-accent">أحمد خالد</span>
+                </h1>
+                <p class="hero-subtitle-text">مبرمج تطبيقات iOS و Android</p>
+                <p class="hero-desc">
+                    مبرمج تطبيقات iOS و Android قادر على تحويل أفكارك إلى تطبيقات احترافية يحبها المستخدمين
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-outline-hero">
+                        تواصل معي
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="cv.pdf" download="Ahmed_Khaled_CV.pdf" class="cv-download-btn btn-filled-hero">
+                        <i class="fas fa-download"></i>
+                        تحميل السيرة الذاتية
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image (left in RTL) -->
+            <div class="hero-image-col">
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/966548828730" target="_blank" class="social-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://x.com" target="_blank" class="social-link" aria-label="X (Twitter)">
+                        <img src="img/x-removebg-preview.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -53,7 +98,7 @@
     <!-- Skills Section -->
     <section class="skills-section" id="skills">
         <h2 class="section-title">المهارات</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 40px;">أعمل بجد لتحسين مهاراتي بانتظام</p>
+        <p class="section-subtitle">أعمل بجد لتحسين مهاراتي بانتظام</p>
         <div class="skills-container">
             <div class="skill-item">
                 <div class="skill-header">
@@ -115,7 +160,7 @@
     <!-- Services Section -->
     <section class="services-section" id="services">
         <h2 class="section-title">الخدمات</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 40px;">ماذا أقدم لعملائي</p>
+        <p class="section-subtitle">ماذا أقدم لعملائي</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
@@ -144,7 +189,7 @@
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
         <h2 class="section-title">المشاريع</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 40px;">معرض لبعض أعمالي</p>
+        <p class="section-subtitle">معرض لبعض أعمالي</p>
         <div class="projects-grid">
             <div class="project-card" style="background-image: url('img/prodact.png');">
                 <div class="project-icon">
@@ -175,7 +220,7 @@
     <!-- Gallery Section -->
     <section class="gallery-section" id="gallery">
         <h2 class="section-title">معرض الصور والانجازات</h2>
-        <p style="text-align: center; color: var(--text-secondary); margin-top: -30px; margin-bottom: 40px;">لقطات من الأعمال، الجوائز، والمشاركات المجتمعية.</p>
+        <p class="section-subtitle">لقطات من الأعمال، الجوائز، والمشاركات المجتمعية.</p>
         <div class="gallery-grid">
             <div class="gallery-item">
                 <img src="img/photo_5902528711599262465_x.jpg" alt="إنجاز 1">
@@ -201,28 +246,28 @@
             <h2 class="section-title">نشتغل سوا ؟</h2>
             <p class="contact-subtitle">املأ النموذج أدناه وسأرد عليك في أقرب وقت</p>
         </div>
-        
+
         <form class="contact-form-simple" id="contactForm">
             <div class="form-group-simple">
                 <label for="name">الاسم*</label>
                 <input type="text" id="name" name="name" placeholder="ادخل اسمك الكامل" required>
             </div>
-            
+
             <div class="form-group-simple">
                 <label for="email">البريد الالكتروني*</label>
                 <input type="email" id="email" name="email" placeholder="example@email.com" required>
             </div>
-            
+
             <div class="form-group-simple">
                 <label for="phone">رقم الجوال*</label>
                 <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
             </div>
-            
+
             <div class="form-group-simple">
                 <label for="message">الرسالة*</label>
                 <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
             </div>
-            
+
             <button type="submit" class="submit-btn">
                 <i class="fas fa-paper-plane"></i>
                 إرسال الرسالة
@@ -245,4 +290,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
