@@ -63,23 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// SKILLS — animate bars on scroll
-// ==========================================
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const bar = entry.target.querySelector('.skill-progress');
-            const width = bar.getAttribute('data-width');
-            setTimeout(() => { bar.style.width = width + '%'; }, 150);
-            entry.target.classList.add('visible');
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.4 });
-
-document.querySelectorAll('.skill-item').forEach(item => skillObserver.observe(item));
-
-// ==========================================
 // GENERAL SCROLL REVEAL
 // ==========================================
 const revealObserver = new IntersectionObserver((entries) => {
@@ -173,6 +156,21 @@ document.querySelectorAll('.social-link, .cv-download-btn').forEach(el => {
         this.style.transform = '';
     });
 });
+
+// ==========================================
+// PROJECTS SEARCH
+// ==========================================
+const projectSearch = document.getElementById('projectSearch');
+if (projectSearch) {
+    projectSearch.addEventListener('input', function() {
+        const query = this.value.trim().toLowerCase();
+        document.querySelectorAll('.project-card').forEach(card => {
+            const name     = (card.dataset.name     || '').toLowerCase();
+            const category = (card.dataset.category || '').toLowerCase();
+            card.classList.toggle('hidden', query && !name.includes(query) && !category.includes(query));
+        });
+    });
+}
 
 // ==========================================
 // CONTACT FORM

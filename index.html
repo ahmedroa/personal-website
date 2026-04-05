@@ -99,60 +99,45 @@
     <section class="skills-section" id="skills">
         <h2 class="section-title">المهارات</h2>
         <p class="section-subtitle">أعمل بجد لتحسين مهاراتي بانتظام</p>
-        <div class="skills-container">
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">Flutter</span>
-                    <span class="skill-percentage">100%</span>
+
+        <div class="skills-ticker-wrapper">
+            <div class="skills-ticker">
+                <!-- First copy -->
+                <div class="ticker-item">
+                    <span class="ticker-label">Flutter</span>
+                    <span class="ticker-icon" style="color:#54C5F8"><i class="fas fa-layer-group"></i></span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="100"></div>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">Laravel</span>
+                    <span class="ticker-icon" style="color:#FF2D20"><i class="fab fa-laravel"></i></span>
                 </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">Laravel</span>
-                    <span class="skill-percentage">90%</span>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">Firebase</span>
+                    <span class="ticker-icon" style="color:#FFCA28"><i class="fas fa-fire-flame-curved"></i></span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">SQL & NoSQL</span>
+                    <span class="ticker-icon" style="color:#3b82f6"><i class="fas fa-database"></i></span>
                 </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">Firebase</span>
-                    <span class="skill-percentage">100%</span>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">Dart</span>
+                    <span class="ticker-icon" style="color:#00B4AB"><i class="fas fa-code"></i></span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="100"></div>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">Google Play</span>
+                    <span class="ticker-icon" style="color:#3DDC84"><i class="fab fa-google-play"></i></span>
                 </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">SQL & NoSQL</span>
-                    <span class="skill-percentage">100%</span>
+                <span class="ticker-dot">✦</span>
+                <div class="ticker-item">
+                    <span class="ticker-label">App Store</span>
+                    <span class="ticker-icon" style="color:#0D96F6"><i class="fab fa-app-store-ios"></i></span>
                 </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="100"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">Dart</span>
-                    <span class="skill-percentage">95%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="95"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <div class="skill-header">
-                    <span class="skill-name">Google Play & App Store</span>
-                    <span class="skill-percentage">90%</span>
-                </div>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90"></div>
-                </div>
+                <span class="ticker-dot">✦</span>
             </div>
         </div>
     </section>
@@ -188,31 +173,96 @@
 
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
-        <h2 class="section-title">المشاريع</h2>
-        <p class="section-subtitle">معرض لبعض أعمالي</p>
-        <div class="projects-grid">
-            <div class="project-card" style="background-image: url('img/prodact.png');">
-                <div class="project-icon">
-                    <img src="img/mnzil.jpg" alt="منزل" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+        <div class="projects-header">
+            <div class="projects-count-badge">
+                <span class="count-num">4</span>
+                <span class="count-label">مميز</span>
+            </div>
+            <div class="projects-title-group">
+                <h2 class="section-title" style="text-align:right; margin-bottom:10px;">معرض الأعمال</h2>
+                <p class="section-subtitle" style="text-align:right; margin-bottom:0;"></p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="projects-search-bar">
+            <div class="search-filter-btn">
+                <span>المميز أولاً</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="search-input-wrap">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="projectSearch" placeholder="ابحث عن التطبيقات بالاسم أو الفئة...">
+            </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+            <!-- ERP Solutions -->
+            <div class="project-card" data-name="erp solutions" data-category="الأعمال">
+                <div class="project-card-top">
+                    <span class="project-category-tag">الأعمال</span>
+                    <div class="project-app-icon">
+                        <img src="img/erp.png" alt="ERP Solutions">
+                    </div>
                 </div>
-                <h3>منزل</h3>
-                <p>تطبيق لحجز الأسرّة بالسكن العمالي مع اختيار السرير العلوي أو السفلي والدفع بسهولة.</p>
+                <h3 class="project-app-name">ERP Solutions</h3>
+                <p class="project-tagline">إدارة الموظفين بشكل أكثر ذكاءً وسرعة</p>
+                <p class="project-app-desc">بسّط عمليات الموارد البشرية باستخدام حل ERP متكامل. قدّم طلبات الموارد البشرية بسهولة، وتتبّع الحضور باستخدام تسجيل الدخول ببصمة الإصبع، وقم بإدارة الموظفين بشكل أكثر ذكاءً وسرعة.</p>
+                <a href="https://apps.apple.com/sa/app/erp-solutions/id6758604850?l=ar" target="_blank" class="project-store-btn">
+                    <span>عرض في متجر التطبيقات</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
 
-            <div class="project-card" style="background-image: url('img/meras.png');">
-                <div class="project-icon">
-                    <img src="img/merass-icon.jpg" alt="مراس" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+            <!-- منزل -->
+            <div class="project-card" data-name="منزل" data-category="السكن">
+                <div class="project-card-top">
+                    <span class="project-category-tag">السكن</span>
+                    <div class="project-app-icon">
+                        <img src="img/mnzil.jpg" alt="منزل">
+                    </div>
                 </div>
-                <h3>مراس</h3>
-                <p>نخصّص لك الصوت اللي يشبهك 🎧 | استمع وكأن المحتوى صُمم خصيصاً لك</p>
+                <h3 class="project-app-name">منزل</h3>
+                <p class="project-tagline">حجز الأسرّة بالسكن العمالي بسهولة</p>
+                <p class="project-app-desc">تطبيق لحجز الأسرّة بالسكن العمالي مع اختيار السرير العلوي أو السفلي والدفع بسهولة.</p>
+                <a href="#" class="project-store-btn">
+                    <span>عرض في متجر التطبيقات</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
 
-            <div class="project-card" style="background-image: url('img/prodact.png');">
-                <div class="project-icon">
-                    <img src="img/siyaj.png" alt="سياج" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+            <!-- مراس -->
+            <div class="project-card" data-name="مراس" data-category="الترفيه">
+                <div class="project-card-top">
+                    <span class="project-category-tag">الترفيه</span>
+                    <div class="project-app-icon">
+                        <img src="img/merass-icon.jpg" alt="مراس">
+                    </div>
                 </div>
-                <h3>سياج</h3>
-                <p>تطبيق للأمن والحماية مع ميزات متقدمة لحماية الممتلكات والمنشآت.</p>
+                <h3 class="project-app-name">مراس</h3>
+                <p class="project-tagline">نخصّص لك الصوت اللي يشبهك</p>
+                <p class="project-app-desc">استمع وكأن المحتوى صُمم خصيصاً لك. تجربة صوتية مخصصة تناسب ذوقك واهتماماتك.</p>
+                <a href="#" class="project-store-btn">
+                    <span>عرض في متجر التطبيقات</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+            <!-- سياج -->
+            <div class="project-card" data-name="سياج" data-category="الأمن">
+                <div class="project-card-top">
+                    <span class="project-category-tag">الأمن</span>
+                    <div class="project-app-icon">
+                        <img src="img/siyaj.png" alt="سياج">
+                    </div>
+                </div>
+                <h3 class="project-app-name">سياج</h3>
+                <p class="project-tagline">حماية متقدمة للممتلكات والمنشآت</p>
+                <p class="project-app-desc">تطبيق للأمن والحماية مع ميزات متقدمة لحماية الممتلكات والمنشآت بكل سهولة واحترافية.</p>
+                <a href="#" class="project-store-btn">
+                    <span>عرض في متجر التطبيقات</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
         </div>
     </section>
