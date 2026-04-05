@@ -173,21 +173,55 @@ if (projectSearch) {
 }
 
 // ==========================================
-// CONTACT FORM
+// CONTACT FORM — Formspree
 // ==========================================
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
         const btn = this.querySelector('.submit-btn');
-        const original = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح!';
-        btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-        setTimeout(() => {
-            this.reset();
-            btn.innerHTML = original;
-            btn.style.background = '';
-        }, 2200);
+        const originalHTML = btn.innerHTML;
+
+        // Loading state
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+        btn.disabled = true;
+
+        const formData = {
+            name:    document.getElementById('name').value,
+            email:   document.getElementById('email').value,
+            phone:   document.getElementById('phone').value,
+            message: document.getElementById('message').value
+        };
+
+        try {
+            const response = await fetch('https://formspree.io/f/xojpprqv', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                btn.innerHTML = '<i class="fas fa-check"></i> تم الإرسال بنجاح!';
+                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                this.reset();
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('فشل الإرسال');
+            }
+        } catch {
+            btn.innerHTML = '<i class="fas fa-xmark"></i> حدث خطأ، حاول مجدداً';
+            btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 3000);
+        }
     });
 }
 
