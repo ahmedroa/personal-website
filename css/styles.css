@@ -536,49 +536,42 @@ body {
     padding: 0 60px;
 }
 
-.skills-ticker-wrapper {
-    width: 100%;
-    margin-top: 20px;
-}
-
-.skills-ticker {
+.skills-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px 0;
-    width: 100%;
-    direction: ltr;
+    gap: 20px;
+    padding: 40px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.ticker-item {
-    display: inline-flex;
+.skill-item {
+    display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0 36px;
+    gap: 8px;
     white-space: nowrap;
 }
 
-.ticker-label {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: 0.3px;
-}
-
-.ticker-icon {
-    font-size: 1.15rem;
-    line-height: 1;
+.skill-icon {
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.ticker-dot {
-    font-size: 0.55rem;
+.skill-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.2px;
+}
+
+.skill-separator {
+    font-size: 0.7rem;
     color: var(--text-secondary);
-    opacity: 0.5;
-    padding: 0 4px;
-    flex-shrink: 0;
+    opacity: 0.4;
 }
 
 /* ==========================================
@@ -1244,6 +1237,7 @@ button, .cv-download-btn { -webkit-tap-highlight-color: transparent; }
     .hero-heading { font-size: 3.5rem; letter-spacing: -1px; }
     .skills-section, .services-section, .projects-section,
     .gallery-section, .contact-section { padding: 80px 30px; }
+    .skills-container { padding: 30px 30px; gap: 16px; }
     .projects-grid { grid-template-columns: 1fr; }
     .projects-header { flex-direction: column; gap: 12px; }
     .projects-search-bar { flex-direction: column; }
@@ -1251,7 +1245,7 @@ button, .cv-download-btn { -webkit-tap-highlight-color: transparent; }
     .section-title { font-size: 2.2rem; }
     .contact-form-simple { padding: 32px 24px; }
     .footer { padding: 44px 24px 30px; }
-}
+}}
 
 @media (max-width: 600px) {
     .navbar { padding: 0 20px; }
@@ -1280,6 +1274,10 @@ button, .cv-download-btn { -webkit-tap-highlight-color: transparent; }
     .profile-image-container { width: 190px; height: 230px; }
     .profile-image { font-size: 60px; }
     .section-title { font-size: 1.9rem; }
+    .skills-container { padding: 25px 18px; gap: 14px; }
+    .skill-item { gap: 6px; }
+    .skill-icon { font-size: 1.1rem; }
+    .skill-label { font-size: 0.88rem; }
     .skills-section, .services-section, .projects-section,
     .gallery-section, .contact-section { padding: 70px 18px; }
-}
+}}
