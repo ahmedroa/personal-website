@@ -74,6 +74,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-offset);
+    scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     background: var(--bg);
 }
@@ -869,6 +870,154 @@ ul, ol { list-style: none; }
     background: rgba(255, 255, 255, .92);
     box-shadow: var(--shadow);
 }
+
+/* ==========================================================================
+   SPLASH — portfolio "build graph" (once per session; see head script)
+   ========================================================================== */
+html.splash-active { overflow: hidden; animation: sp-unlock 0s 8s forwards; }
+@keyframes sp-unlock { to { overflow: visible; } }
+@keyframes sp-fallback { to { visibility: hidden; opacity: 0; } }
+@keyframes sp-blink { 50% { opacity: 0; } }
+@keyframes sp-type { to { width: calc(var(--n) * 1ch); } }
+
+.splash { display: none; }
+.js:not(.no-splash) .splash {
+    --k: 1;    /* layout scale, set by JS for small screens */
+    --ns: 1;   /* node scale */
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 18px;
+    overflow: hidden;
+    background: #fff;
+    color: var(--ink);
+    cursor: pointer;
+    transition: opacity .45s ease, visibility .45s;
+    animation: sp-fallback 0s 8s forwards; /* safety net if JS never runs */
+}
+.splash::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(32% 32% at 50% 46%, rgba(var(--accent-rgb), .09), transparent 70%),
+        linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 48px 48px,
+        linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse 55% 55% at 50% 46%, #000 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse 55% 55% at 50% 46%, #000 30%, transparent 75%);
+    pointer-events: none;
+}
+.splash.is-out { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.sx { position: relative; width: calc(600px * var(--k)); height: calc(600px * var(--k)); }
+.sx__wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sx__wires line {
+    stroke: rgba(var(--accent-rgb), .35);
+    stroke-width: 1.2;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset .7s var(--ease);
+}
+.sx__wires line.is-award { stroke: #d8d5cc; }
+.sx__wires line.is-on { stroke-dashoffset: 0; }
+.splash.is-collapse .sx__wires line.is-on { stroke-dashoffset: 1; transition-duration: .45s; }
+
+.sx__core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: calc(14px * var(--ns)) calc(20px * var(--ns));
+    border-radius: 16px;
+    border: 1px solid var(--line-2);
+    background: #fff;
+    box-shadow: var(--shadow-lg);
+    font-family: var(--mono);
+    font-size: calc(20px * var(--k));
+    line-height: 1.4;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    animation: sx-core .55s var(--ease) both;
+    transition: transform .45s var(--ease), box-shadow .45s;
+}
+@keyframes sx-core { from { opacity: 0; transform: translate(-50%, -50%) scale(.85); } }
+.splash.is-collapse .sx__core { transform: translate(-50%, -50%) scale(1.06); box-shadow: 0 0 0 8px rgba(var(--accent-rgb), .08), var(--shadow-lg); }
+.sx__code { display: inline-block; width: 0; overflow: hidden; white-space: pre; }
+.splash.is-typing .sx__code { animation: sp-type calc(var(--n, 15) * 45ms) steps(var(--n, 15), end) forwards; }
+.sx__code i { font-style: normal; color: var(--muted); }
+.sx__code b { font-weight: 600; color: var(--accent); }
+.sx__caret { width: 2px; height: 1.2em; background: var(--accent); animation: sp-blink .8s steps(1) infinite; }
+
+.sx__node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--x, 0), var(--y, 0)) scale(calc(var(--ns) * .4));
+    transition: transform .75s cubic-bezier(.34, 1.56, .64, 1), opacity .4s ease;
+}
+.sx__node.is-on { opacity: 1; transform: translate(-50%, -50%) translate(var(--x, 0), var(--y, 0)) scale(var(--ns)); }
+.splash.is-collapse .sx__node {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+    transition: transform .6s cubic-bezier(.6, 0, .4, 1) calc(var(--i, 0) * 40ms), opacity .4s ease calc(var(--i, 0) * 40ms + 150ms);
+}
+
+.sx__node--app { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.sx__node--app img {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    object-fit: cover;
+    background: var(--brand);
+    box-shadow: 0 16px 30px -14px rgba(18, 19, 23, .45), 0 0 0 1px rgba(18, 19, 23, .06);
+}
+.sx__node--app small {
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: var(--chip);
+    border: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-2);
+    direction: ltr;
+    white-space: nowrap;
+}
+.sx__node--award {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 10px 24px -14px rgba(18, 19, 23, .35);
+}
+.sx__node--award .ic { width: 16px; height: 16px; }
+.sx__node--gold { color: #7a5400; background: #fdf3d8; border: 1px solid #f1dc9e; }
+.sx__node--silver { color: #3e4654; background: #eef1f5; border: 1px solid #d8dde5; }
+
+.sx__log {
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink-2);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .5s ease, transform .5s var(--ease);
+}
+.sx__ok { color: var(--ok); font-weight: 700; }
+.splash.is-log .sx__log { opacity: 1; transform: none; }
+.splash__skip { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: 13px; color: var(--muted); }
 
 /* ==========================================================================
    REVEAL

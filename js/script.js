@@ -24,7 +24,103 @@
             revealIO.unobserve(entry.target);
         });
     }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
-    $$('[data-reveal]').forEach((el) => revealIO.observe(el));
+
+    let revealStarted = false;
+    function startReveal() {
+        if (revealStarted) return;
+        revealStarted = true;
+        $$('[data-reveal]').forEach((el) => revealIO.observe(el));
+    }
+
+    /* ----------------------------------------------------------------------
+       1b. Splash — a "build graph": the <AhmedKhalid /> component types
+           itself, real app icons and awards connect to it, then everything
+           collapses into the centre and the page appears.
+           The head script decides whether it plays (once per session,
+           never with reduced motion). Click or any key skips it.
+       ---------------------------------------------------------------------- */
+    const root = document.documentElement;
+    const splash = $('#splash');
+
+    function runSplash() {
+        try { sessionStorage.setItem('splashSeen', '1'); } catch { /* storage blocked: fine */ }
+
+        const timers = [];
+        const later = (fn, ms) => timers.push(setTimeout(fn, ms));
+
+        // fit the 600px graph to small screens: radii shrink with k, nodes a bit less
+        const k = Math.min(1, (window.innerWidth - 24) / 600, (window.innerHeight - 210) / 600);
+        const ns = Math.max(0.78, k);
+        splash.style.setProperty('--k', k.toFixed(3));
+        splash.style.setProperty('--ns', ns.toFixed(3));
+
+        const svg = $('.sx__wires', splash);
+        const half = 300 * k;
+        svg.setAttribute('viewBox', `${-half} ${-half} ${half * 2} ${half * 2}`);
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+
+        const nodes = $$('.sx__node', splash);
+        const wires = nodes.map((node, i) => {
+            const a = (Number(node.dataset.a) * Math.PI) / 180;
+            const r = Number(node.dataset.r) * k;
+            const isAward = node.classList.contains('sx__node--award');
+            node.style.setProperty('--x', (Math.cos(a) * r).toFixed(1) + 'px');
+            node.style.setProperty('--y', (Math.sin(a) * r).toFixed(1) + 'px');
+            node.style.setProperty('--i', i);
+            const from = 62 * k;                       // just outside the core card
+            const to = r - (isAward ? 30 : 46) * ns;   // stop short of the node
+            const line = document.createElementNS(SVG_NS, 'line');
+            line.setAttribute('x1', (Math.cos(a) * from).toFixed(1));
+            line.setAttribute('y1', (Math.sin(a) * from).toFixed(1));
+            line.setAttribute('x2', (Math.cos(a) * to).toFixed(1));
+            line.setAttribute('y2', (Math.sin(a) * to).toFixed(1));
+            line.setAttribute('pathLength', '1');
+            if (isAward) line.classList.add('is-award');
+            svg.appendChild(line);
+            return line;
+        });
+
+        const code = $('.sx__code', splash);
+        code.style.setProperty('--n', code.textContent.length);
+        later(() => splash.classList.add('is-typing'), 200);
+
+        // apps pop first, awards follow on the outer ring (~4.5s in total)
+        let appIndex = 0;
+        let awardIndex = 0;
+        nodes.forEach((node, i) => {
+            const at = node.classList.contains('sx__node--award')
+                ? 1950 + awardIndex++ * 230
+                : 750 + appIndex++ * 220;
+            later(() => wires[i].classList.add('is-on'), at - 140);
+            later(() => node.classList.add('is-on'), at);
+        });
+        later(() => splash.classList.add('is-log'), 2700);
+        later(() => {
+            splash.classList.add('is-collapse');
+            setTimeout(finish, 720);
+        }, 3600);
+
+        let finished = false;
+        function finish() {
+            if (finished) return;
+            finished = true;
+            timers.forEach(clearTimeout);
+            document.removeEventListener('keydown', finish);
+            splash.classList.add('is-out');
+            root.classList.remove('splash-active');
+            startReveal();
+            setTimeout(() => splash.remove(), 600);
+        }
+        splash.addEventListener('click', finish);
+        document.addEventListener('keydown', finish);
+    }
+
+    if (splash && root.classList.contains('splash-active')) {
+        runSplash();
+    } else {
+        if (splash) splash.remove();
+        startReveal();
+    }
 
     /* ----------------------------------------------------------------------
        2. Nav: shadow on scroll, active section, mobile menu
