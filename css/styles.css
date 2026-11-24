@@ -633,7 +633,7 @@ ul, ol { list-style: none; }
 /* ==========================================================================
    ACHIEVEMENTS
    ========================================================================== */
-.awards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.awards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 .award {
     display: flex;
     flex-direction: column;
@@ -689,6 +689,7 @@ ul, ol { list-style: none; }
 .rank .ic { width: 16px; height: 16px; }
 .rank--gold { color: #7a5400; background: #fdf3d8; border: 1px solid #f1dc9e; }
 .rank--silver { color: #3e4654; background: #eef1f5; border: 1px solid #d8dde5; }
+.rank--talk { color: var(--accent-ink); background: var(--accent-soft); border: 1px solid rgba(var(--accent-rgb), .2); }
 
 /* ==========================================================================
    SKILLS
@@ -899,6 +900,7 @@ ul, ol { list-style: none; }
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1100px) {
+    .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .nav__links a { padding-inline: 9px; font-size: 14.5px; }
 }
 
@@ -926,8 +928,6 @@ ul, ol { list-style: none; }
 
 
     .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .award:last-child { grid-column: 1 / -1; }
-    .award:last-child .award__media { aspect-ratio: 16 / 8; }
 
     .cta { grid-template-columns: 1fr; }
 }
@@ -949,7 +949,6 @@ ul, ol { list-style: none; }
     .stat b { font-size: 38px; }
 
     .awards { grid-template-columns: 1fr; }
-    .award:last-child .award__media { aspect-ratio: 4 / 3; }
 
     .skills { grid-template-columns: 1fr; }
     .skill { grid-template-columns: 1fr; grid-template-areas: "ic" "title" "chips"; padding: 22px; }
