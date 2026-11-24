@@ -94,7 +94,6 @@
             later(() => wires[i].classList.add('is-on'), at - 140);
             later(() => node.classList.add('is-on'), at);
         });
-        later(() => splash.classList.add('is-log'), 2700);
         later(() => {
             splash.classList.add('is-collapse');
             setTimeout(finish, 720);

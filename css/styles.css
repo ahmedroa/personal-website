@@ -1006,17 +1006,6 @@ html.splash-active { overflow: hidden; animation: sp-unlock 0s 8s forwards; }
 .sx__node--gold { color: #7a5400; background: #fdf3d8; border: 1px solid #f1dc9e; }
 .sx__node--silver { color: #3e4654; background: #eef1f5; border: 1px solid #d8dde5; }
 
-.sx__log {
-    position: relative;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink-2);
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity .5s ease, transform .5s var(--ease);
-}
-.sx__ok { color: var(--ok); font-weight: 700; }
-.splash.is-log .sx__log { opacity: 1; transform: none; }
 .splash__skip { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-size: 13px; color: var(--muted); }
 
 /* ==========================================================================
