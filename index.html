@@ -4,366 +4,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحمد خالد - Portfolio</title>
+    <title>أحمد خالد — مهندس برمجيات</title>
+    <meta name="description" content="أحمد خالد، مهندس برمجيات يطوّر تطبيقات الجوال بـ Flutter وأنظمة ERP وCRM والواجهات الخلفية وواجهات REST API. أعمال، خبرات، إنجازات، وطرق التواصل.">
+    <meta name="theme-color" content="#f6f5f1">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="أحمد خالد — مهندس برمجيات">
+    <meta property="og:description" content="أطوّر تطبيقات وأنظمة تحوّل احتياجات العمل إلى منتجات رقمية عملية.">
+    <meta property="og:image" content="img/ahmed.jpeg">
+    <meta property="og:locale" content="ar_SA">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121317'/%3E%3Cpath d='M22 24 12 32l10 8M42 24l10 8-10 8M36 18l-8 28' fill='none' stroke='%23ffffff' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
     <link rel="preload" href="fonts/thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/thmanyahsans-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/thmanyahsans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="fonts/thmanyahserifdisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/styles.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
+    <a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 
-    <!-- Cursor Follower -->
-    <div class="cursor-follower"></div>
+    <!-- ===== Icon sprite ===== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M17 17 7 7M7 15.5V7h8.5" /></symbol>
+        <symbol id="i-forward" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6" /></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7.5 8 5.5 8-5.5" /></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" /><path d="M11 18h2" /></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.3a8.5 8.5 0 1 1 15.6-4.6z" /><path d="M9 10.5h6M9 13.5h3.5" /></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></symbol>
+        <symbol id="i-store" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="4" /><path d="m8.5 15 3.5-6.5 3.5 6.5M9.6 13h4.8" /></symbol>
+        <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" /><path d="M10.5 5.5h3M11 18h2" /></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z" /><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5" /></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2" /><rect x="3" y="13" width="18" height="7" rx="2" /><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6" /></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3" /><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 8.4-8 9-4.6-.6-8-4.4-8-9V6l8-3z" /><path d="m9 12 2.2 2.2L15.5 10" /></symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z" /><path d="M17 6h3v1.5A3.5 3.5 0 0 1 16.8 11M7 6H4v1.5A3.5 3.5 0 0 0 7.2 11" /></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9z" /><path d="M6 11v5c0 1.6 2.7 3 6 3s6-1.4 6-3v-5M22 9v6" /></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5" /><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18" /></symbol>
+        <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0-5.2 5.2L3.5 17.5l3 3 5.8-5.8a4 4 0 0 0 5.2-5.2L15 12l-2.5-.5L12 9l2.5-2.5z" /></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11.5" height="11.5" rx="2.5" /><path d="M5.5 15H5a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 5 3.5h8.5A1.5 1.5 0 0 1 15 5v.5" /></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" /></symbol>
+        <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2M11 8.5v5M8.5 11h5" /></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+    </svg>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-brand">أ.خ</div>
-        <div class="nav-menu" id="navMenu">
-            <a href="#home" class="nav-link active">الرئيسية</a>
-            <a href="#skills" class="nav-link">المهارات</a>
-            <a href="#services" class="nav-link">الخدمات</a>
-            <a href="#projects" class="nav-link">المشاريع</a>
-            <a href="#gallery" class="nav-link">معرض الصور</a>
-            <a href="#contact" class="nav-link">التواصل</a>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
+    <!-- ===== Navigation ===== -->
+    <header class="nav" id="nav">
+        <div class="nav__bar">
+            <a href="#home" class="brand" aria-label="أحمد خالد — الرئيسية">
+                <img class="brand__avatar" src="img/ahmed.jpeg" alt="" width="40" height="40">
+                <span class="brand__text">
+                    <b>أحمد خالد</b>
+                    <small>مهندس برمجيات</small>
+                </span>
+            </a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+            <nav class="nav__links" aria-label="التنقل الرئيسي">
+                <a href="#home">الرئيسية</a>
+                <a href="#work">أعمالي</a>
+                <a href="#about">عني</a>
+                <a href="#experience">الخبرة</a>
+                <a href="#achievements">الإنجازات</a>
+                <a href="#contact">تواصل</a>
+            </nav>
 
-        <!-- Spinning Circular Badge -->
-        <div class="hero-badge">
-            <svg class="badge-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <path id="textCircle" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
-                </defs>
-                <text fill="currentColor" font-size="11.5" letter-spacing="2.5">
-                    <textPath href="#textCircle">مبرمج تطبيقات ✦ Flutter Developer ✦ </textPath>
-                </text>
-            </svg>
-            <div class="badge-icon">
-                <i class="fas fa-mobile-alt"></i>
-            </div>
-        </div>
-
-        <div class="hero-inner">
-            <!-- Hero Text (right in RTL) -->
-            <div class="hero-text">
-                <p class="hero-status"><span class="status-dot"></span>متاح للعمل</p>
-                <h1 class="hero-heading">
-                    أهلاً أنا <span class="name-accent">أحمد</span>
-                </h1>
-                <p class="hero-subtitle-text">مبرمج تطبيقات iOS و Android</p>
-                <p class="hero-desc">
-                    مبرمج تطبيقات iOS و Android قادر على تحويل أفكارك إلى تطبيقات احترافية يحبها المستخدمين
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-outline-hero">
-                        تواصل معي
-                        <i class="fas fa-arrow-left"></i>
-                    </a>
-                    <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank"
-                        class="cv-download-btn btn-filled-hero">
-                        <i class="fas fa-download"></i>
-                        تحميل السيرة الذاتية
-                    </a>
-                </div>
-            </div>
-
-            <!-- Hero Image (left in RTL) -->
-            <div class="hero-image-col">
-                <div class="profile-image-container">
-                    <div class="profile-image">
-                        <img src="img/ahmed.jpeg" alt="صورة أحمد الشخصية">
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://wa.me/966548828730" target="_blank" class="social-link" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://x.com" target="_blank" class="social-link" aria-label="X (Twitter)">
-                        <img src="img/x-removebg-preview.png" alt="X (Twitter)">
-                    </a>
-                    <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" class="social-link"
-                        aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section" id="skills">
-        <h2 class="section-title">المهارات</h2>
-        <p class="section-subtitle">أعمل بجد لتحسين مهاراتي بانتظام</p>
-
-        <div class="skills-container">
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#54C5F8"><i class="fas fa-layer-group"></i></span>
-                <span class="skill-label">Flutter</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#FF2D20"><i class="fab fa-laravel"></i></span>
-                <span class="skill-label">Laravel</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#FFCA28"><i class="fas fa-fire-flame-curved"></i></span>
-                <span class="skill-label">Firebase</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#3b82f6"><i class="fas fa-database"></i></span>
-                <span class="skill-label">SQL & NoSQL</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#00B4AB"><i class="fas fa-code"></i></span>
-                <span class="skill-label">Dart</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#3DDC84"><i class="fab fa-google-play"></i></span>
-                <span class="skill-label">Google Play</span>
-            </div>
-            <span class="skill-separator">•</span>
-            <div class="skill-item">
-                <span class="skill-icon" style="color:#0D96F6"><i class="fab fa-app-store-ios"></i></span>
-                <span class="skill-label">App Store</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <h2 class="section-title">الخدمات</h2>
-        <p class="section-subtitle">ماذا أقدم لعملائي</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>تطوير الواجهات الأمامية</h3>
-                <p>برمجة وتطوير تطبيقات تعمل على جميع المنصات باستخدام إطار عمل Flutter</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3>تطوير الواجهات الخلفية</h3>
-                <p>تطوير الواجهات الخلفية لتطبيقات الجوال باستخدام إطار عمل Laravel</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <h3>تطوير لوحات التحكم</h3>
-                <p>بناء وتطوير لوحات تحكم التطبيقات باستخدام إطار عمل Laravel</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-        <div class="projects-header">
-            <div class="projects-count-badge">
-                <span class="count-num">4</span>
-                <span class="count-label">مميز</span>
-            </div>
-            <div class="projects-title-group">
-                <h2 class="section-title" style="text-align:right; margin-bottom:10px;">معرض الأعمال</h2>
-                <p class="section-subtitle" style="text-align:right; margin-bottom:0;"></p>
-            </div>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="projects-search-bar">
-            <div class="search-filter-btn">
-                <span>المميز أولاً</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="search-input-wrap">
-                <i class="fas fa-magnifying-glass"></i>
-                <input type="text" id="projectSearch" placeholder="ابحث عن التطبيقات بالاسم أو الفئة...">
-            </div>
-        </div>
-
-        <div class="projects-grid" id="projectsGrid">
-            <!-- صياناتي -->
-            <div class="project-card" data-name="صياناتي" data-category="الإنتاجية">
-                <div class="project-card-top">
-                    <span class="project-category-tag">الإنتاجية</span>
-                    <div class="project-app-icon">
-                        <img src="img/siuanate.png" alt="صياناتي">
-                    </div>
-                </div>
-                <h3 class="project-app-name">صياناتي</h3>
-                <p class="project-tagline">رفيقك الذكي لصيانة سيارتك</p>
-                <p class="project-app-desc">تطبيق يساعدك على تنظيم ومتابعة صيانة سيارتك بطريقة سهلة وواضحة. سجّل بيانات
-                    مركبتك، تتبّع تغيير الزيت والقطع الاستهلاكية، واحسب موعد الصيانة القادمة تلقائياً حسب الممشى.</p>
-                <a href="https://apps.apple.com/sa/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A/id6759578745?l=ar"
-                    target="_blank" class="project-store-btn">
-                    <span>عرض في متجر التطبيقات</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
+            <div class="nav__end">
+                <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--ink btn--sm nav__cv">
+                    <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                    <span>السيرة الذاتية</span>
                 </a>
-            </div>
-
-            <!-- ERP Solutions -->
-            <div class="project-card" data-name="erp solutions" data-category="الأعمال">
-                <div class="project-card-top">
-                    <span class="project-category-tag">الأعمال</span>
-                    <div class="project-app-icon">
-                        <img src="img/erp.png" alt="ERP Solutions">
-                    </div>
-                </div>
-                <h3 class="project-app-name">ERP Solutions</h3>
-                <p class="project-tagline">إدارة الموظفين بشكل أكثر ذكاءً وسرعة</p>
-                <p class="project-app-desc">بسّط عمليات الموارد البشرية باستخدام حل ERP متكامل. قدّم طلبات الموارد
-                    البشرية بسهولة، وتتبّع الحضور باستخدام تسجيل الدخول ببصمة الإصبع، وقم بإدارة الموظفين بشكل أكثر
-                    ذكاءً وسرعة.</p>
-                <a href="https://apps.apple.com/sa/app/erp-solutions/id6758604850?l=ar" target="_blank"
-                    class="project-store-btn">
-                    <span>عرض في متجر التطبيقات</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-
-            <!-- منزل -->
-            <div class="project-card" data-name="منزل" data-category="السكن">
-                <div class="project-card-top">
-                    <span class="project-category-tag">السكن</span>
-                    <div class="project-app-icon">
-                        <img src="img/mnzil.jpg" alt="منزل">
-                    </div>
-                </div>
-                <h3 class="project-app-name">منزل</h3>
-                <p class="project-tagline">حجز الأسرّة بالسكن العمالي بسهولة</p>
-                <p class="project-app-desc">تطبيق لحجز الأسرّة بالسكن العمالي مع اختيار السرير العلوي أو السفلي والدفع
-                    بسهولة.</p>
-                <a href="#" class="project-store-btn">
-                    <span>قريباً</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-
-            <!-- مراس -->
-            <div class="project-card" data-name="مراس" data-category="الترفيه">
-                <div class="project-card-top">
-                    <span class="project-category-tag">الترفيه</span>
-                    <div class="project-app-icon">
-                        <img src="img/merass-icon.jpg" alt="مراس">
-                    </div>
-                </div>
-                <h3 class="project-app-name">مراس</h3>
-                <p class="project-tagline">نخصّص لك الصوت اللي يشبهك</p>
-                <p class="project-app-desc">استمع وكأن المحتوى صُمم خصيصاً لك. تجربة صوتية مخصصة تناسب ذوقك واهتماماتك.
-                </p>
-                <a href="#" class="project-store-btn">
-                    <span>قريباً</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-
-            <!-- سياج -->
-            <div class="project-card" data-name="سياج" data-category="الأمن">
-                <div class="project-card-top">
-                    <span class="project-category-tag">الأمن</span>
-                    <div class="project-app-icon">
-                        <img src="img/siyaj.png" alt="سياج">
-                    </div>
-                </div>
-                <h3 class="project-app-name">سياج</h3>
-                <p class="project-tagline">حماية متقدمة للممتلكات والمنشآت</p>
-                <p class="project-app-desc">تطبيق للأمن والحماية مع ميزات متقدمة لحماية الممتلكات والمنشآت بكل سهولة
-                    واحترافية.</p>
-                <a href="#" class="project-store-btn">
-                    <span>عرض في متجر التطبيقات</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
+                <button class="nav__toggle" id="navToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span><span></span>
+                </button>
             </div>
         </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <h2 class="section-title">معرض الصور والانجازات</h2>
-        <p class="section-subtitle">لقطات من الأعمال، الجوائز، والمشاركات المجتمعية.</p>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="img/photo_5902528711599262465_x.jpg" alt="إنجاز 1">
-            </div>
-            <div class="gallery-item">
-                <img src="img/photo_5902528711599262466_y.jpg" alt="إنجاز 2">
-            </div>
-            <div class="gallery-item">
-                <img src="img/photo_5902528711599262467_x.jpg" alt="إنجاز 3">
-            </div>
-            <div class="gallery-item">
-                <img src="img/1447-06-24 11.07.08.jpg" alt="إنجاز 4">
-            </div>
+        <div class="mobile-menu" id="mobileMenu" hidden>
+            <nav aria-label="القائمة">
+                <a href="#home">الرئيسية</a>
+                <a href="#work">أعمالي</a>
+                <a href="#about">عني</a>
+                <a href="#experience">الخبرة</a>
+                <a href="#achievements">الإنجازات</a>
+                <a href="#contact">تواصل</a>
+            </nav>
+            <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--ink btn--block">
+                <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                <span>السيرة الذاتية</span>
+            </a>
         </div>
-    </section>
+    </header>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-header">
-            <div class="contact-icon-wrapper">
-                <i class="fas fa-envelope"></i>
+    <main id="main">
+
+        <!-- ===== Hero ===== -->
+        <section class="hero" id="home" aria-labelledby="heroTitle">
+            <div class="hero__grid-bg" aria-hidden="true"></div>
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <p class="status" data-reveal><span class="status__dot" aria-hidden="true"></span>منفتح على الفرص الوظيفية المناسبة</p>
+                    <h1 class="hero__title" id="heroTitle" data-reveal style="--d:80">
+                        <span class="hero__name">أحمد خالد</span>
+                        <span class="hero__role">مهندس برمجيات</span>
+                    </h1>
+                    <p class="hero__tagline" data-reveal style="--d:160">أطوّر تطبيقات وأنظمة تحوّل احتياجات العمل إلى منتجات رقمية عملية.</p>
+                    <p class="hero__lead" data-reveal style="--d:240">خبرتي في تطبيقات الجوال بـ Flutter، وأنظمة ERP وCRM، وتطوير الويب والواجهات الخلفية وواجهات REST API — من فهم المتطلبات وتصميم بنية النظام حتى الاختبار والنشر.</p>
+                    <div class="hero__actions" data-reveal style="--d:320">
+                        <a href="#work" class="btn btn--accent">
+                            <span>استعرض أعمالي</span>
+                            <svg class="ic" aria-hidden="true"><use href="#i-forward" /></svg>
+                        </a>
+                        <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--line">
+                            <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                            <span>السيرة الذاتية</span>
+                        </a>
+                    </div>
+                    <ul class="hero__facts" data-reveal style="--d:400" aria-label="معلومات سريعة">
+                        <li><svg class="ic" aria-hidden="true"><use href="#i-briefcase" /></svg><span dir="ltr">AKEDCo</span> · منذ يونيو 2025</li>
+                        <li><svg class="ic" aria-hidden="true"><use href="#i-cap" /></svg>خريج تقنية معلومات · 2025</li>
+                        <li><svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>4 تطبيقات على App Store</li>
+                    </ul>
+                </div>
+
+                <figure class="portrait" data-reveal style="--d:200">
+                    <div class="portrait__frame">
+                        <img src="img/ahmed.jpeg" alt="صورة أحمد خالد" width="831" height="808" fetchpriority="high">
+                    </div>
+                    <span class="portrait__chip portrait__chip--a" aria-hidden="true"><svg class="ic"><use href="#i-mobile" /></svg><span dir="ltr">Flutter</span></span>
+                    <span class="portrait__chip portrait__chip--b" aria-hidden="true"><svg class="ic"><use href="#i-server" /></svg><span dir="ltr">Laravel · REST API</span></span>
+                    <span class="portrait__chip portrait__chip--c" aria-hidden="true"><svg class="ic"><use href="#i-layers" /></svg><span dir="ltr">ERP · CRM</span></span>
+                </figure>
             </div>
-            <h2 class="section-title">نشتغل سوا ؟</h2>
-            <p class="contact-subtitle">املأ النموذج أدناه وسأرد عليك في أقرب وقت</p>
-        </div>
+        </section>
 
-        <form class="contact-form-simple" id="contactForm">
-            <div class="form-group-simple">
-                <label for="name">الاسم*</label>
-                <input type="text" id="name" name="name" placeholder="ادخل اسمك الكامل" required>
+        <!-- ===== Work ===== -->
+        <section class="section" id="work" aria-labelledby="workTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>01</span>أعمالي</p>
+                    <h2 class="h2" id="workTitle" data-reveal style="--d:60">منتجات عملت عليها</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">أنظمة وتطبيقات في مجالات العقار، والموارد البشرية، والقهوة المختصة، وصيانة المركبات، والمحتوى الصوتي. كل بطاقة تقود إلى المنتج الفعلي.</p>
+                </header>
+
+                <div class="projects">
+                    <!-- Rela -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#6428b2" href="https://rela.sa/ar" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="img/rela-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-globe" /></svg><span dir="ltr">rela.sa</span></span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>ريلا <span class="project__latin" dir="ltr">Rela</span></h3>
+                                <span class="pill">العقارات · ERP وCRM</span>
+                            </div>
+                            <p class="project__desc">منصة ERP وCRM متكاملة للعمليات العقارية، تشمل المبيعات، وإدارة العقارات، وعمليات الإسكان، والتقارير، والإجراءات الإدارية.</p>
+                        </div>
+                    </article>
+
+                    <!-- Mokhtas -->
+                    <article class="project" data-reveal style="--d:100">
+                        <a class="project__media media media--app" style="--brand:#c95f38" href="https://apps.apple.com/sa/app/%D9%85%D8%AE%D8%AA%D8%B5-%D8%B1%D9%81%D9%8A%D9%82-%D9%82%D9%87%D9%88%D8%AA%D9%83-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B5%D8%A9/id6824872191?l=ar" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="img/mokhtas-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>متاح على App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>مختص <span class="project__latin" dir="ltr">Mokhtas</span></h3>
+                                <span class="pill">القهوة المختصة</span>
+                            </div>
+                            <p class="project__desc">تطبيق لاستكشاف حبوب القهوة، وإنشاء وصفات التحضير وتخصيصها وحفظها، ومشاركتها مع الأصدقاء عبر الروابط.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/%D9%85%D8%AE%D8%AA%D8%B5-%D8%B1%D9%81%D9%8A%D9%82-%D9%82%D9%87%D9%88%D8%AA%D9%83-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B5%D8%A9/id6824872191?l=ar" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>عرض في App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ERP Solutions -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#3fa595" href="https://apps.apple.com/sa/app/erp-solutions/id6758604850?l=ar" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="img/erp-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>متاح على App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3><span dir="ltr">ERP Solutions</span></h3>
+                                <span class="pill">الموارد البشرية</span>
+                            </div>
+                            <p class="project__desc">تطبيق لإدارة عمليات الموارد البشرية: تقديم الطلبات، وتسجيل الحضور بالبصمة، وإدارة الموظفين بشكل أسرع وأوضح.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/erp-solutions/id6758604850?l=ar" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>عرض في App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Siyanati -->
+                    <article class="project" data-reveal style="--d:100">
+                        <a class="project__media media media--app" style="--brand:#5a67d8" href="https://apps.apple.com/sa/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A/id6759578745?l=ar" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="img/siuanate-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>متاح على App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>صياناتي <span class="project__latin" dir="ltr">Siyanati</span></h3>
+                                <span class="pill">صيانة المركبات</span>
+                            </div>
+                            <p class="project__desc">تطبيق لتنظيم صيانة المركبات: سجل الخدمات، ومتابعة مواعيد الصيانة، وحفظ الفواتير والضمانات، وتنبيهات للصيانة القادمة.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A/id6759578745?l=ar" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>عرض في App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Meras -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#e8805a" href="https://apps.apple.com/sa/app/meras-%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA/id6781631778?l=ar" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="img/merass-icon.jpg" alt="" width="400" height="400" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>متاح على App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>مراس <span class="project__latin" dir="ltr">Meras</span></h3>
+                                <span class="pill">البودكاست والمحتوى الصوتي</span>
+                            </div>
+                            <p class="project__desc">تطبيق يحوّل أي موضوع أو مقال أو تغريدة أو كتاب إلى حلقة بودكاست بصوت عربي طبيعي خلال ثوانٍ، مع اختيار الأسلوب والصوت ومدة الحلقة، ومكتبة لملخصات الكتب والمقالات.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/meras-%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA/id6781631778?l=ar" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>عرض في App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
+        </section>
 
-            <div class="form-group-simple">
-                <label for="email">البريد الالكتروني*</label>
-                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <!-- ===== About ===== -->
+        <section class="section section--tint" id="about" aria-labelledby="aboutTitle">
+            <div class="container about">
+                <header class="about__head">
+                    <p class="eyebrow" data-reveal><span>02</span>عني</p>
+                    <h2 class="h2" id="aboutTitle" data-reveal style="--d:60">أبني المنتج من المتطلبات حتى النشر</h2>
+                </header>
+                <div class="about__text" data-reveal style="--d:120">
+                    <p>أنا أحمد خالد، مهندس برمجيات وخريج تقنية المعلومات. أعمل على تطبيقات الجوال وأنظمة الأعمال والواجهات الخلفية، بدءاً من فهم متطلبات العمل وتصميم بنية النظام، ومروراً بتطوير تطبيقات الويب والجوال وواجهات API وقواعد البيانات والتكاملات.</p>
+                    <p>أهتم بأن تكون الأنظمة التي أعمل عليها قابلة للتوسع وآمنة وموثوقة، وأتابعها بعد التطوير عبر الاختبار والنشر والصيانة.</p>
+                </div>
+
+                <ul class="stats" aria-label="أرقام سريعة">
+                    <li class="stat" data-reveal><b><span dir="ltr"><i class="stat__plus">+</i>5</span></b><span>سنوات خبرة</span></li>
+                    <li class="stat" data-reveal style="--d:80"><b><span dir="ltr"><i class="stat__plus">+</i>10</span> ألف</b><span>مستخدم</span></li>
+                    <li class="stat" data-reveal style="--d:160"><b>4</b><span>تطبيقات منشورة على App Store</span></li>
+                    <li class="stat" data-reveal style="--d:240"><b>3</b><span>مراكز متقدمة في هاكاثونات</span></li>
+                </ul>
             </div>
+        </section>
 
-            <div class="form-group-simple">
-                <label for="phone">رقم الجوال*</label>
-                <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
+        <!-- ===== Expertise ===== -->
+        <section class="section" id="expertise" aria-labelledby="expTitle">
+            <div class="container split">
+                <header class="split__head">
+                    <p class="eyebrow" data-reveal><span>03</span>مجالات الخبرة</p>
+                    <h2 class="h2" id="expTitle" data-reveal style="--d:60">ما أعمل عليه</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">مجالات اكتسبت فيها خبرة عملية من خلال عملي في الشركات والمشاريع.</p>
+                </header>
+
+                <ol class="areas">
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-mobile" /></svg></span><span class="area__n">01</span></div>
+                        <h3>تطبيقات الجوال باستخدام Flutter</h3>
+                        <p>تطبيقات iOS وAndroid بقاعدة كود واحدة، من بناء الواجهات وتجربة الاستخدام إلى الاختبار وتجهيز النشر.</p>
+                        <ul class="chips" dir="ltr"><li>Flutter</li><li>iOS</li><li>Android</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-layers" /></svg></span><span class="area__n">02</span></div>
+                        <h3>أنظمة ERP وCRM وسير العمل</h3>
+                        <p>وحدات للمالية والموارد البشرية والمبيعات وإدارة العقارات، تؤتمت سير العمل وتجمع بيانات المنشأة في مكان واحد.</p>
+                        <ul class="chips" dir="ltr"><li>ERP</li><li>CRM</li><li>Workflows</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-server" /></svg></span><span class="area__n">03</span></div>
+                        <h3>الواجهات الخلفية وواجهات REST API</h3>
+                        <p>بناء منطق الأعمال وواجهات برمجية تربط تطبيقات الجوال والويب بالأنظمة الداخلية.</p>
+                        <ul class="chips" dir="ltr"><li>Laravel</li><li>PHP</li><li>Express.js</li><li>REST</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-database" /></svg></span><span class="area__n">04</span></div>
+                        <h3>قواعد البيانات والتكاملات</h3>
+                        <p>تصميم قواعد البيانات وتكاملها مع الأنظمة، وربط خدمات التطبيقات لضمان أداء موثوق.</p>
+                        <ul class="chips" dir="ltr"><li>MySQL</li><li>MongoDB</li><li>Firebase</li><li>Supabase</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span><span class="area__n">05</span></div>
+                        <h3>الاختبار والنشر والأمان والموثوقية</h3>
+                        <p>معالجة الثغرات الأمنية، وإدارة بيئات الإنتاج والتجريب، والنسخ الاحتياطي والاستعادة الآلية، وتجهيز التطبيقات للنشر.</p>
+                        <ul class="chips" dir="ltr"><li>Testing</li><li>CI/CD</li><li>Security</li><li>Backups</li></ul>
+                    </li>
+                </ol>
             </div>
+        </section>
 
-            <div class="form-group-simple">
-                <label for="message">الرسالة*</label>
-                <textarea id="message" name="message" rows="6" placeholder="اكتب رسالتك هنا..." required></textarea>
+        <!-- ===== Experience ===== -->
+        <section class="section section--night" id="experience" aria-labelledby="xpTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow eyebrow--night" data-reveal><span>04</span>الخبرة المهنية</p>
+                    <h2 class="h2" id="xpTitle" data-reveal style="--d:60">أين عملت</h2>
+                </header>
+
+                <ol class="timeline">
+                    <li class="job" data-reveal>
+                        <div class="job__when">
+                            <span><time datetime="2025-06">يونيو 2025</time> — الآن</span>
+                            <span class="job__now">حالياً</span>
+                        </div>
+                        <div class="job__card">
+                            <h3><span dir="ltr">AKEDCo</span></h3>
+                            <ul class="job__list">
+                                <li>تصميم وتطوير نظام ERP متكامل يغطي المالية والموارد البشرية والمبيعات، لتوحيد العمليات وأتمتة سير العمل وتسهيل الوصول إلى البيانات.</li>
+                                <li>تحديد ثغرات أمنية حرجة ومعالجتها لتعزيز أمان النظام وحماية البيانات الحساسة.</li>
+                                <li>المساهمة في تطوير تطبيقات iOS وAndroid واختبارها وتجهيزها للنشر.</li>
+                            </ul>
+                            <ul class="chips chips--night" dir="ltr"><li>ERP</li><li>Security</li><li>iOS</li><li>Android</li></ul>
+                        </div>
+                    </li>
+                    <li class="job" data-reveal>
+                        <div class="job__when"><span><time datetime="2025-01">يناير 2025</time> — <time datetime="2025-05">مايو 2025</time></span></div>
+                        <div class="job__card">
+                            <h3><span dir="ltr">Noor Al-Kitab Company</span></h3>
+                            <ul class="job__list">
+                                <li>المساهمة في تحسين الإنتاجية وجودة الخدمات من خلال حلول رقمية.</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job" data-reveal>
+                        <div class="job__when"><span><time datetime="2024-10">أكتوبر 2024</time> — <time datetime="2025-03">مارس 2025</time></span></div>
+                        <div class="job__card">
+                            <h3><span dir="ltr">Stayro</span></h3>
+                            <ul class="job__list">
+                                <li>المساهمة في تطوير تطبيق عقاري للجوال يخدم العملاء والتجار، لاكتشاف العقارات وإدارة الإعلانات والعمليات التجارية.</li>
+                                <li>بناء الميزات الأساسية وتحسينها مع التركيز على تجربة المستخدم والتفاعل بين العملاء ومزوّدي العقارات.</li>
+                                <li>العمل على تكامل خدمات التطبيق وضمان أداء موثوق.</li>
+                            </ul>
+                            <ul class="chips chips--night" dir="ltr"><li>Mobile</li><li>Real estate</li><li>Integrations</li></ul>
+                        </div>
+                    </li>
+                    <li class="job job--edu" data-reveal>
+                        <div class="job__when"><span><time datetime="2025-08">أغسطس 2025</time></span></div>
+                        <div class="job__card">
+                            <p class="job__kind"><svg class="ic" aria-hidden="true"><use href="#i-cap" /></svg>التعليم</p>
+                            <h3>خريج تقنية المعلومات</h3>
+                            <p class="job__sub">جامعة الرازي، السودان</p>
+                        </div>
+                    </li>
+                </ol>
             </div>
+        </section>
 
-            <button type="submit" class="submit-btn">
-                <i class="fas fa-paper-plane"></i>
-                إرسال الرسالة
-            </button>
-        </form>
-    </section>
+        <!-- ===== Achievements ===== -->
+        <section class="section" id="achievements" aria-labelledby="achTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>05</span>الإنجازات</p>
+                    <h2 class="h2" id="achTitle" data-reveal style="--d:60">إنجازات تقنية في هاكاثونات</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">حلول قُدّمت أمام لجان تحكيم متخصصة في التقنيات القانونية والمحاسبية والمالية.</p>
+                </header>
 
-    <!-- Footer -->
+                <ul class="awards">
+                    <li class="award" data-reveal>
+                        <button type="button" class="award__media" data-caption="المركز الأول — هاكاثون جامعة الملك سعود، مسار التقنيات القانونية · 2024" aria-label="تكبير صورة: المركز الأول في هاكاثون جامعة الملك سعود">
+                            <img src="img/gallery-05.jpeg" alt="أحمد خالد يتسلّم جائزة المركز الأول في هاكاثون جامعة الملك سعود" width="535" height="713" loading="lazy" style="object-position:50% 22%">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--gold"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>المركز الأول</span>
+                            <h3>هاكاثون جامعة الملك سعود</h3>
+                            <p>مسار التقنيات القانونية · <time datetime="2024">2024</time></p>
+                        </div>
+                    </li>
+                    <li class="award" data-reveal style="--d:100">
+                        <button type="button" class="award__media" data-caption="المركز الثاني — هاكاثون رقيم المحاسبي 2، ملتقى اليوم العالمي للمحاسبة · 2024" aria-label="تكبير صورة: المركز الثاني في هاكاثون رقيم المحاسبي">
+                            <img src="img/gallery-03.jpg" alt="تكريم الفائزين بالمركز الثاني في هاكاثون رقيم المحاسبي 2" width="718" height="480" loading="lazy">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--silver"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>المركز الثاني</span>
+                            <h3>هاكاثون رقيم المحاسبي</h3>
+                            <p>ملتقى اليوم العالمي للمحاسبة · <time datetime="2024">2024</time></p>
+                        </div>
+                    </li>
+                    <li class="award" data-reveal style="--d:200">
+                        <button type="button" class="award__media" data-caption="المركز الأول — هاكاثون الادخار، مع فريق Grow Up · 2023" aria-label="تكبير صورة: المركز الأول في هاكاثون الادخار">
+                            <img src="img/gallery-02.jpg" alt="فريق Grow Up بعد الفوز بالمركز الأول في هاكاثون الادخار" width="1280" height="960" loading="lazy">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--gold"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>المركز الأول</span>
+                            <h3>هاكاثون الادخار</h3>
+                            <p>مع فريق <span dir="ltr">Grow Up</span> · <time datetime="2023">2023</time></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section class="section section--tint" id="skills" aria-labelledby="skillsTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>06</span>المهارات</p>
+                    <h2 class="h2" id="skillsTitle" data-reveal style="--d:60">المهارات التقنية</h2>
+                </header>
+
+                <div class="skills">
+                    <article class="skill" data-reveal>
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-mobile" /></svg></span>
+                        <h3>التطبيقات والواجهات</h3>
+                        <ul class="chips" dir="ltr"><li>Flutter</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>Bootstrap</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:80">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-server" /></svg></span>
+                        <h3>الخلفية وواجهات API</h3>
+                        <ul class="chips" dir="ltr"><li>Laravel</li><li>PHP</li><li>Express.js</li><li>RESTful APIs</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:160">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-database" /></svg></span>
+                        <h3>قواعد البيانات والخدمات</h3>
+                        <ul class="chips" dir="ltr"><li>MySQL</li><li>MongoDB</li><li>NoSQL</li><li>Firebase</li><li>Supabase</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:240">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-tool" /></svg></span>
+                        <h3>الأدوات والممارسات</h3>
+                        <ul class="chips" dir="ltr"><li>Git</li><li>GitHub</li><li>Postman</li><li>Clean Architecture</li><li>CI/CD</li><li>UI/UX</li></ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="section contact" id="contact" aria-labelledby="contactTitle">
+            <div class="container">
+                <div class="cta" data-reveal>
+                    <div class="cta__copy">
+                        <p class="eyebrow eyebrow--night"><span>07</span>تواصل</p>
+                        <h2 class="h2" id="contactTitle">لنتحدث عن الفرصة المناسبة</h2>
+                        <p>إذا كانت لديك فرصة في هندسة البرمجيات أو تطوير تطبيقات الجوال أو أنظمة الأعمال، يسعدني التواصل معك.</p>
+                        <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--light">
+                            <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                            <span>السيرة الذاتية</span>
+                        </a>
+                    </div>
+
+                    <ul class="channels">
+                        <li class="channel channel--mail">
+                            <a href="mailto:dev.ahmed10@gmail.com" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg></span>
+                                <span class="channel__text"><small>البريد الإلكتروني</small><b dir="ltr">dev.ahmed10<wbr>@gmail.com</b></span>
+                            </a>
+                            <button type="button" class="channel__copy" data-copy="dev.ahmed10@gmail.com" aria-label="نسخ البريد الإلكتروني">
+                                <svg class="ic" aria-hidden="true"><use href="#i-copy" /></svg>
+                                <span class="channel__copied" aria-live="polite"></span>
+                            </button>
+                        </li>
+                        <li class="channel">
+                            <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" rel="noopener" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-linkedin" /></svg></span>
+                                <span class="channel__text"><small>لينكدإن</small><b dir="ltr">in/devahmed0</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                        <li class="channel">
+                            <a href="tel:+966548828730" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-phone" /></svg></span>
+                                <span class="channel__text"><small>الجوال</small><b dir="ltr">+966 54 882 8730</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                        <li class="channel">
+                            <a href="https://wa.me/966548828730" target="_blank" rel="noopener" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-chat" /></svg></span>
+                                <span class="channel__text"><small>واتساب</small><b>محادثة مباشرة</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>© أحمد خالد — 2025</p>
-            <div class="footer-links">
-                <a href="https://wa.me/966548828730" target="_blank" class="footer-link">WhatsApp</a>
-                <a href="https://x.com" target="_blank" class="footer-link">X (Twitter)</a>
-                <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" class="footer-link">LinkedIn</a>
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <b>أحمد خالد</b>
+                <span>مهندس برمجيات</span>
             </div>
+            <nav class="footer__nav" aria-label="روابط التذييل">
+                <a href="#work">أعمالي</a>
+                <a href="#about">عني</a>
+                <a href="#experience">الخبرة</a>
+                <a href="#achievements">الإنجازات</a>
+                <a href="#skills">المهارات</a>
+                <a href="#contact">تواصل</a>
+            </nav>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-linkedin" /></svg>لينكدإن</a>
+                <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>السيرة الذاتية</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>© <span id="year">2026</span> أحمد خالد. جميع الحقوق محفوظة.</p>
+            <a href="#home" class="footer__top">العودة للأعلى</a>
         </div>
     </footer>
+
+    <!-- ===== Lightbox ===== -->
+    <dialog class="lightbox" id="lightbox" aria-label="عرض الصورة">
+        <button type="button" class="lightbox__close" aria-label="إغلاق"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+        <img alt="" id="lightboxImg">
+        <p id="lightboxCap"></p>
+    </dialog>
 
     <script src="js/script.js"></script>
 </body>
 
 </html>
+hf
