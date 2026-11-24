@@ -8,6 +8,12 @@
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
+    // UI strings follow the page language (index.html = Arabic, en/ = English)
+    const isEn = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+    const T = isEn
+        ? { openMenu: 'Open menu', closeMenu: 'Close menu', copied: 'Copied', copyFailed: "Couldn't copy" }
+        : { openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة', copied: 'تم النسخ', copyFailed: 'تعذّر النسخ' };
+
     /* ----------------------------------------------------------------------
        1. Reveal on scroll
        ---------------------------------------------------------------------- */
@@ -55,7 +61,7 @@
     function setMenu(open) {
         menu.hidden = !open;
         toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'فتح القائمة');
+        toggle.setAttribute('aria-label', open ? T.closeMenu : T.openMenu);
     }
     if (toggle && menu) {
         toggle.addEventListener('click', () => setMenu(menu.hidden));
@@ -114,7 +120,7 @@
                 try { ok = document.execCommand('copy'); } catch { ok = false; }
                 ta.remove();
             }
-            if (label) label.textContent = ok ? 'تم النسخ' : 'تعذّر النسخ';
+            if (label) label.textContent = ok ? T.copied : T.copyFailed;
             btn.classList.add('is-copied');
             clearTimeout(btn._t);
             btn._t = setTimeout(() => {

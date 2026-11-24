@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Khalid — Software Engineer</title>
+    <meta name="description" content="Ahmed Khalid, a software engineer building Flutter mobile apps, ERP and CRM systems, backends, and REST APIs. Projects, achievements, and contact details.">
+    <meta name="theme-color" content="#f6f5f1">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Ahmed Khalid — Software Engineer">
+    <meta property="og:description" content="I build apps and systems that turn business needs into practical digital products.">
+    <meta property="og:image" content="../img/ahmed.jpeg">
+    <meta property="og:locale" content="en_US">
+    <link rel="alternate" hreflang="ar" href="../">
+    <link rel="alternate" hreflang="en" href="./">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121317'/%3E%3Cpath d='M22 24 12 32l10 8M42 24l10 8-10 8M36 18l-8 28' fill='none' stroke='%23ffffff' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <link rel="preload" href="../fonts/thmanyahsans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/thmanyahserifdisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- ===== Icon sprite (arrows point right for LTR) ===== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5" /></symbol>
+        <symbol id="i-forward" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z" /><path d="M14 3v5h5M9 13h6M9 17h4" /></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7.5 8 5.5 8-5.5" /></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" /><path d="M11 18h2" /></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.3a8.5 8.5 0 1 1 15.6-4.6z" /><path d="M9 10.5h6M9 13.5h3.5" /></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></symbol>
+        <symbol id="i-store" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="4" /><path d="m8.5 15 3.5-6.5 3.5 6.5M9.6 13h4.8" /></symbol>
+        <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" /><path d="M10.5 5.5h3M11 18h2" /></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z" /><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5" /></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2" /><rect x="3" y="13" width="18" height="7" rx="2" /><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6" /></symbol>
+        <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3" /><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13" /><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" /></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 8.4-8 9-4.6-.6-8-4.4-8-9V6l8-3z" /><path d="m9 12 2.2 2.2L15.5 10" /></symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z" /><path d="M17 6h3v1.5A3.5 3.5 0 0 1 16.8 11M7 6H4v1.5A3.5 3.5 0 0 0 7.2 11" /></symbol>
+        <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0-5.2 5.2L3.5 17.5l3 3 5.8-5.8a4 4 0 0 0 5.2-5.2L15 12l-2.5-.5L12 9l2.5-2.5z" /></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11.5" height="11.5" rx="2.5" /><path d="M5.5 15H5a1.5 1.5 0 0 1-1.5-1.5V5A1.5 1.5 0 0 1 5 3.5h8.5A1.5 1.5 0 0 1 15 5v.5" /></symbol>
+        <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2M11 8.5v5M8.5 11h5" /></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></symbol>
+    </svg>
+
+    <!-- ===== Navigation ===== -->
+    <header class="nav" id="nav">
+        <div class="nav__bar">
+            <a href="#home" class="brand" aria-label="Ahmed Khalid — Home">
+                <img class="brand__avatar" src="../img/ahmed.jpeg" alt="" width="40" height="40">
+                <span class="brand__text">
+                    <b>Ahmed Khalid</b>
+                    <small>Software Engineer</small>
+                </span>
+            </a>
+
+            <nav class="nav__links" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav__end">
+                <a href="../" class="nav__lang" lang="ar" hreflang="ar" aria-label="النسخة العربية">عربي</a>
+                <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--ink btn--sm nav__cv">
+                    <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                    <span>Resume</span>
+                </a>
+                <button class="nav__toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" hidden>
+            <nav aria-label="Menu">
+                <a href="#home">Home</a>
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--ink btn--block">
+                <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                <span>Resume</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ===== Hero ===== -->
+        <section class="hero" id="home" aria-labelledby="heroTitle">
+            <div class="hero__grid-bg" aria-hidden="true"></div>
+            <div class="container hero__inner">
+                <div class="hero__copy">
+                    <p class="status" data-reveal><span class="status__dot" aria-hidden="true"></span>Passionate about turning challenges into solutions</p>
+                    <h1 class="hero__title" id="heroTitle" data-reveal style="--d:80">
+                        <span class="hero__name">Ahmed Khalid</span>
+                        <span class="hero__role">Software Engineer</span>
+                    </h1>
+                    <p class="hero__tagline" data-reveal style="--d:160">I build apps and systems that turn business needs into practical digital products.</p>
+                    <p class="hero__lead" data-reveal style="--d:240">Experienced in Flutter mobile apps, ERP and CRM systems, web development, backends, and REST APIs — from understanding requirements and designing system architecture through testing and release.</p>
+                    <div class="hero__actions" data-reveal style="--d:320">
+                        <a href="#work" class="btn btn--accent">
+                            <span>View my work</span>
+                            <svg class="ic" aria-hidden="true"><use href="#i-forward" /></svg>
+                        </a>
+                        <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--line">
+                            <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+                </div>
+
+                <figure class="portrait" data-reveal style="--d:200">
+                    <div class="portrait__frame">
+                        <img src="../img/ahmed.jpeg" alt="Photo of Ahmed Khalid" width="831" height="808" fetchpriority="high">
+                    </div>
+                    <span class="portrait__chip portrait__chip--a" aria-hidden="true"><svg class="ic"><use href="#i-mobile" /></svg><span>Flutter</span></span>
+                    <span class="portrait__chip portrait__chip--b" aria-hidden="true"><svg class="ic"><use href="#i-server" /></svg><span>Laravel · REST API</span></span>
+                    <span class="portrait__chip portrait__chip--c" aria-hidden="true"><svg class="ic"><use href="#i-layers" /></svg><span>ERP · CRM</span></span>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ===== Work ===== -->
+        <section class="section" id="work" aria-labelledby="workTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>01</span>Work</p>
+                    <h2 class="h2" id="workTitle" data-reveal style="--d:60">Products I've worked on</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">Systems and apps across real estate, HR, specialty coffee, vehicle maintenance, and audio content. Each card links to the live product.</p>
+                </header>
+
+                <div class="projects">
+                    <!-- Rela -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#6428b2" href="https://rela.sa/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="../img/rela-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-globe" /></svg><span>rela.sa</span></span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>Rela</h3>
+                                <span class="pill">Real estate · ERP &amp; CRM</span>
+                            </div>
+                            <p class="project__desc">An integrated ERP and CRM platform for real estate operations, covering sales, property management, housing operations, reporting, and administrative workflows.</p>
+                        </div>
+                    </article>
+
+                    <!-- Mokhtas -->
+                    <article class="project" data-reveal style="--d:100">
+                        <a class="project__media media media--app" style="--brand:#c95f38" href="https://apps.apple.com/sa/app/%D9%85%D8%AE%D8%AA%D8%B5-%D8%B1%D9%81%D9%8A%D9%82-%D9%82%D9%87%D9%88%D8%AA%D9%83-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B5%D8%A9/id6824872191" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="../img/mokhtas-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>On the App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>Mokhtas</h3>
+                                <span class="pill">Specialty coffee</span>
+                            </div>
+                            <p class="project__desc">An app for exploring coffee beans, creating, customizing, and saving brewing recipes, and sharing them with friends via links.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/%D9%85%D8%AE%D8%AA%D8%B5-%D8%B1%D9%81%D9%8A%D9%82-%D9%82%D9%87%D9%88%D8%AA%D9%83-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B5%D8%A9/id6824872191" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>View on the App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ERP Solutions -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#3fa595" href="https://apps.apple.com/sa/app/erp-solutions/id6758604850" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="../img/erp-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>On the App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>ERP Solutions</h3>
+                                <span class="pill">Human resources</span>
+                            </div>
+                            <p class="project__desc">An all-in-one HR app: submit requests easily, track attendance with fingerprint check-in, and manage employees faster and more clearly.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/erp-solutions/id6758604850" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>View on the App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Siyanati -->
+                    <article class="project" data-reveal style="--d:100">
+                        <a class="project__media media media--app" style="--brand:#5a67d8" href="https://apps.apple.com/sa/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A/id6759578745" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="../img/siuanate-sm.png" alt="" width="320" height="320" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>On the App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>Siyanati</h3>
+                                <span class="pill">Vehicle maintenance</span>
+                            </div>
+                            <p class="project__desc">A vehicle maintenance app that keeps every car service in one place: service history, maintenance schedules, invoices and warranties, and reminders for upcoming maintenance.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/%D8%B5%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%D9%8A/id6759578745" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>View on the App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Meras -->
+                    <article class="project" data-reveal>
+                        <a class="project__media media media--app" style="--brand:#e8805a" href="https://apps.apple.com/sa/app/meras-%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA/id6781631778" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                            <span class="media__rings"></span>
+                            <img class="media__icon" src="../img/merass-icon.jpg" alt="" width="400" height="400" loading="lazy">
+                            <span class="media__badge"><svg class="ic"><use href="#i-store" /></svg>On the App Store</span>
+                        </a>
+                        <div class="project__body">
+                            <div class="project__head">
+                                <h3>Meras</h3>
+                                <span class="pill">Podcasts &amp; audio content</span>
+                            </div>
+                            <p class="project__desc">An app that turns any topic, article, tweet, or book into a podcast episode with a natural Arabic voice in seconds — with control over style, voice, and episode length, plus a library of book and article summaries.</p>
+                            <a class="project__link" href="https://apps.apple.com/sa/app/meras-%D8%A8%D9%88%D8%AF%D9%83%D8%A7%D8%B3%D8%AA/id6781631778" target="_blank" rel="noopener">
+                                <svg class="ic" aria-hidden="true"><use href="#i-store" /></svg>
+                                <span>View on the App Store</span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== About ===== -->
+        <section class="section section--tint" id="about" aria-labelledby="aboutTitle">
+            <div class="container about">
+                <header class="about__head">
+                    <p class="eyebrow" data-reveal><span>02</span>About</p>
+                    <h2 class="h2" id="aboutTitle" data-reveal style="--d:60">I build products from requirements to release</h2>
+                </header>
+                <div class="about__text" data-reveal style="--d:120">
+                    <p>I'm Ahmed Khalid, a software engineer and Information Technology graduate. I work on mobile apps, business systems, and backends — from understanding business requirements and designing system architecture to building web and mobile apps, APIs, databases, and integrations.</p>
+                    <p>I care about making the systems I work on scalable, secure, and reliable, and I stay with them beyond development through testing, release, and maintenance.</p>
+                </div>
+
+                <ul class="stats" aria-label="Quick numbers">
+                    <li class="stat" data-reveal><b>5<i class="stat__plus">+</i></b><span>Years of experience</span></li>
+                    <li class="stat" data-reveal style="--d:80"><b>10K<i class="stat__plus">+</i></b><span>Users</span></li>
+                    <li class="stat" data-reveal style="--d:160"><b>4</b><span>Apps published on the App Store</span></li>
+                    <li class="stat" data-reveal style="--d:240"><b>3</b><span>Top placements in hackathons</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== Expertise ===== -->
+        <section class="section" id="expertise" aria-labelledby="expTitle">
+            <div class="container split">
+                <header class="split__head">
+                    <p class="eyebrow" data-reveal><span>03</span>Expertise</p>
+                    <h2 class="h2" id="expTitle" data-reveal style="--d:60">What I work on</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">Areas where I've built hands-on experience through my work at companies and on projects.</p>
+                </header>
+
+                <ol class="areas">
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-mobile" /></svg></span><span class="area__n">01</span></div>
+                        <h3>Mobile apps with Flutter</h3>
+                        <p>iOS and Android apps from a single codebase — from building interfaces and the user experience to testing and release preparation.</p>
+                        <ul class="chips"><li>Flutter</li><li>iOS</li><li>Android</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-layers" /></svg></span><span class="area__n">02</span></div>
+                        <h3>ERP, CRM &amp; workflow systems</h3>
+                        <p>Modules for finance, HR, sales, and property management that automate workflows and bring an organization's data into one place.</p>
+                        <ul class="chips"><li>ERP</li><li>CRM</li><li>Workflows</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-server" /></svg></span><span class="area__n">03</span></div>
+                        <h3>Backends &amp; REST APIs</h3>
+                        <p>Building business logic and APIs that connect mobile and web apps to internal systems.</p>
+                        <ul class="chips"><li>Laravel</li><li>PHP</li><li>Express.js</li><li>REST</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-database" /></svg></span><span class="area__n">04</span></div>
+                        <h3>Databases &amp; integrations</h3>
+                        <p>Designing databases, integrating them with other systems, and connecting app services for reliable performance.</p>
+                        <ul class="chips"><li>MySQL</li><li>MongoDB</li><li>Firebase</li><li>Supabase</li></ul>
+                    </li>
+                    <li class="area" data-reveal>
+                        <div class="area__top"><span class="area__ic"><svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span><span class="area__n">05</span></div>
+                        <h3>Testing, release, security &amp; reliability</h3>
+                        <p>Fixing security vulnerabilities, managing production and staging environments, automated backup and recovery, and preparing apps for release.</p>
+                        <ul class="chips"><li>Testing</li><li>CI/CD</li><li>Security</li><li>Backups</li></ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== Achievements ===== -->
+        <section class="section" id="achievements" aria-labelledby="achTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>04</span>Achievements</p>
+                    <h2 class="h2" id="achTitle" data-reveal style="--d:60">Hackathon achievements</h2>
+                    <p class="sec-lead" data-reveal style="--d:120">Solutions presented to specialized judging panels in legal tech, accounting, and fintech.</p>
+                </header>
+
+                <ul class="awards">
+                    <li class="award" data-reveal>
+                        <button type="button" class="award__media" data-caption="1st place — King Saud University Hackathon, Legal Tech track · 2024" aria-label="Enlarge photo: 1st place at the King Saud University Hackathon">
+                            <img src="../img/gallery-05.jpeg" alt="Ahmed Khalid receiving the 1st place award at the King Saud University Hackathon" width="535" height="713" loading="lazy" style="object-position:50% 22%">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--gold"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>1st place</span>
+                            <h3>King Saud University Hackathon</h3>
+                            <p>Legal Tech track · <time datetime="2024">2024</time></p>
+                        </div>
+                    </li>
+                    <li class="award" data-reveal style="--d:100">
+                        <button type="button" class="award__media" data-caption="2nd place — Raqeem Accounting Hackathon 2, World Accounting Day Forum · 2024" aria-label="Enlarge photo: 2nd place at the Raqeem Accounting Hackathon">
+                            <img src="../img/gallery-03.jpg" alt="Winners of 2nd place being honored at the Raqeem Accounting Hackathon 2" width="718" height="480" loading="lazy">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--silver"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>2nd place</span>
+                            <h3>Raqeem Accounting Hackathon</h3>
+                            <p>World Accounting Day Forum · <time datetime="2024">2024</time></p>
+                        </div>
+                    </li>
+                    <li class="award" data-reveal style="--d:200">
+                        <button type="button" class="award__media" data-caption="1st place — Savings Hackathon, with team Grow Up · 2023" aria-label="Enlarge photo: 1st place at the Savings Hackathon">
+                            <img src="../img/gallery-02.jpg" alt="Team Grow Up after winning 1st place at the Savings Hackathon" width="1280" height="960" loading="lazy">
+                            <span class="award__zoom" aria-hidden="true"><svg class="ic"><use href="#i-zoom" /></svg></span>
+                        </button>
+                        <div class="award__body">
+                            <span class="rank rank--gold"><svg class="ic" aria-hidden="true"><use href="#i-trophy" /></svg>1st place</span>
+                            <h3>Savings Hackathon</h3>
+                            <p>With team Grow Up · <time datetime="2023">2023</time></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== Skills ===== -->
+        <section class="section section--tint" id="skills" aria-labelledby="skillsTitle">
+            <div class="container">
+                <header class="sec-head">
+                    <p class="eyebrow" data-reveal><span>05</span>Skills</p>
+                    <h2 class="h2" id="skillsTitle" data-reveal style="--d:60">Technical skills</h2>
+                </header>
+
+                <div class="skills">
+                    <article class="skill" data-reveal>
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-mobile" /></svg></span>
+                        <h3>Apps &amp; interfaces</h3>
+                        <ul class="chips"><li>Flutter</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>Bootstrap</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:80">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-server" /></svg></span>
+                        <h3>Backend &amp; APIs</h3>
+                        <ul class="chips"><li>Laravel</li><li>PHP</li><li>Express.js</li><li>RESTful APIs</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:160">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-database" /></svg></span>
+                        <h3>Databases &amp; services</h3>
+                        <ul class="chips"><li>MySQL</li><li>MongoDB</li><li>NoSQL</li><li>Firebase</li><li>Supabase</li></ul>
+                    </article>
+                    <article class="skill" data-reveal style="--d:240">
+                        <span class="skill__ic"><svg class="ic" aria-hidden="true"><use href="#i-tool" /></svg></span>
+                        <h3>Tools &amp; practices</h3>
+                        <ul class="chips"><li>Git</li><li>GitHub</li><li>Postman</li><li>Clean Architecture</li><li>CI/CD</li><li>UI/UX</li></ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="section contact" id="contact" aria-labelledby="contactTitle">
+            <div class="container">
+                <div class="cta" data-reveal>
+                    <div class="cta__copy">
+                        <h2 class="h2 cta__title" id="contactTitle">Every digital product I help build is an opportunity to create real value.</h2>
+                        <p>I turn ideas and business needs into integrated systems and digital solutions that combine engineering thinking, quality execution, and user experience.</p>
+                        <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener" class="btn btn--light">
+                            <svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+
+                    <ul class="channels">
+                        <li class="channel channel--mail">
+                            <a href="mailto:dev.ahmed10@gmail.com" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-mail" /></svg></span>
+                                <span class="channel__text"><small>Email</small><b>dev.ahmed10<wbr>@gmail.com</b></span>
+                            </a>
+                            <button type="button" class="channel__copy" data-copy="dev.ahmed10@gmail.com" aria-label="Copy email address">
+                                <svg class="ic" aria-hidden="true"><use href="#i-copy" /></svg>
+                                <span class="channel__copied" aria-live="polite"></span>
+                            </button>
+                        </li>
+                        <li class="channel">
+                            <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" rel="noopener" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-linkedin" /></svg></span>
+                                <span class="channel__text"><small>LinkedIn</small><b>in/devahmed0</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                        <li class="channel">
+                            <a href="tel:+966548828730" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-phone" /></svg></span>
+                                <span class="channel__text"><small>Phone</small><b>+966 54 882 8730</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                        <li class="channel">
+                            <a href="https://wa.me/966548828730" target="_blank" rel="noopener" class="channel__link">
+                                <span class="channel__ic"><svg class="ic" aria-hidden="true"><use href="#i-chat" /></svg></span>
+                                <span class="channel__text"><small>WhatsApp</small><b>Direct chat</b></span>
+                                <svg class="ic ic--arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <b>Ahmed Khalid</b>
+                <span>Software Engineer</span>
+            </div>
+            <nav class="footer__nav" aria-label="Footer links">
+                <a href="#work">Work</a>
+                <a href="#about">About</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/in/devahmed0/" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-linkedin" /></svg>LinkedIn</a>
+                <a href="https://flowcv.com/resume/4u36gawukmsl" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-file" /></svg>Resume</a>
+                <a href="../" lang="ar" hreflang="ar">عربي</a>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>© <span id="year">2026</span> Ahmed Khalid. All rights reserved.</p>
+            <a href="#home" class="footer__top">Back to top</a>
+        </div>
+    </footer>
+
+    <!-- ===== Lightbox ===== -->
+    <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+        <button type="button" class="lightbox__close" aria-label="Close"><svg class="ic" aria-hidden="true"><use href="#i-close" /></svg></button>
+        <img alt="" id="lightboxImg">
+        <p id="lightboxCap"></p>
+    </dialog>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

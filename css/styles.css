@@ -283,6 +283,22 @@ ul, ol { list-style: none; }
 .nav__links a.is-active { color: var(--ink); background: var(--chip); font-weight: 500; }
 
 .nav__end { display: flex; align-items: center; gap: 8px; }
+.nav__lang {
+    display: inline-grid;
+    place-items: center;
+    min-width: 44px;
+    height: 42px;
+    padding-inline: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--line-2);
+    background: var(--surface);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    transition: border-color .2s, background-color .2s;
+}
+.nav__lang:hover { border-color: var(--ink); }
+.nav__lang:lang(en) { font-family: var(--font); letter-spacing: .04em; }
 
 .nav__toggle {
     display: none;
@@ -866,6 +882,20 @@ ul, ol { list-style: none; }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
 
 /* ==========================================================================
+   ENGLISH (LTR) PAGE
+   ========================================================================== */
+[dir="ltr"] .chips { direction: ltr; }
+[dir="ltr"] .channel__text b { text-align: left; }
+[dir="ltr"] .btn--accent:hover .ic { transform: translateX(3px); }
+[dir="ltr"] .project__link:hover .ic--arrow,
+[dir="ltr"] .channel__link:hover .ic--arrow { transform: translate(2px, -2px); }
+[dir="ltr"] .stat__plus { margin-inline: 2px 0; }
+[lang="en"] .hero__name { font-size: clamp(46px, 6vw, 84px); letter-spacing: -.02em; }
+[lang="en"] .h2 { letter-spacing: -.01em; line-height: 1.18; }
+[lang="en"] .hero__tagline { line-height: 1.45; }
+[lang="en"] body, [lang="en"] .hero__lead, [lang="en"] .sec-lead { line-height: 1.7; }
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 1100px) {
@@ -878,9 +908,8 @@ ul, ol { list-style: none; }
     .nav__toggle { display: block; }
 
     .hero__inner { grid-template-columns: 1fr; }
-    .portrait { max-width: 360px; margin-top: 8px; }
-    .portrait__chip--a { left: -16px; }
-    .portrait__chip--b { right: -16px; }
+    /* single-column layouts: the photo already shows in the nav bar */
+    .portrait { display: none; }
 
     .projects { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
     .project:last-child:nth-child(odd) { flex-direction: column; }
@@ -912,8 +941,6 @@ ul, ol { list-style: none; }
 
     .hero__actions { width: 100%; }
     .hero__actions .btn { flex: 1 1 100%; }
-    .portrait { max-width: 300px; }
-    .portrait__chip { font-size: 13px; padding: 7px 11px; }
 
     .project__body, .project:last-child:nth-child(odd) .project__body { padding: 22px 20px 24px; }
 
