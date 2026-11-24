@@ -22,8 +22,8 @@
     --bg-tint: #eeede7;
     --surface: #ffffff;
     --chip: #f2f1ec;
-    --line: #e3e1da;
-    --line-2: #d3d0c6;
+    --line: #ecebe5;
+    --line-2: #e2e0d8;
 
     /* text */
     --ink: #121317;
@@ -39,7 +39,7 @@
     /* dark band */
     --night: #0f1115;
     --night-2: #171a21;
-    --night-line: rgba(255, 255, 255, .1);
+    --night-line: rgba(255, 255, 255, .06);
     --night-text: #f2f2ef;
     --night-muted: #a7abb6;
 
@@ -252,7 +252,7 @@ ul, ol { list-style: none; }
     gap: 16px;
     padding-inline: 12px 12px;
     border-radius: 18px;
-    border: 1px solid rgba(18, 19, 23, .08);
+    border: 1px solid rgba(18, 19, 23, .05);
     background: rgba(255, 255, 255, .8);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
     backdrop-filter: blur(14px) saturate(160%);
