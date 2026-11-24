@@ -35,7 +35,7 @@
     onScroll();
 
     // Sections map to the nav item that "owns" them.
-    const owner = { home: 'home', work: 'work', about: 'about', expertise: 'about', experience: 'experience', achievements: 'achievements', skills: 'achievements', contact: 'contact' };
+    const owner = { home: 'home', work: 'work', about: 'about', expertise: 'about', achievements: 'achievements', skills: 'achievements', contact: 'contact' };
     const navAnchors = $$('.nav__links a, .mobile-menu nav a');
     const sectionIO = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {

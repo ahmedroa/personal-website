@@ -2,8 +2,8 @@
    أحمد خالد — مهندس برمجيات
    --------------------------------------------------------------------------
    Light, editorial identity: warm paper background, ink text, one cobalt
-   accent, serif display headings, and a dark band for the experience
-   timeline. Edit TOKENS to re-skin the site.
+   accent, serif display headings, and a dark contact panel.
+   Edit TOKENS to re-skin the site.
    ========================================================================== */
 
 /* ---------- Fonts: Thmanyah (خط ثمانية) ---------- */
@@ -191,13 +191,10 @@ ul, ol { list-style: none; }
     line-height: 1.6;
     color: var(--ink-2);
 }
-.chips--night li { border-color: var(--night-line); background: rgba(255, 255, 255, .05); color: #d6d8df; }
 
 /* ---------- Sections ---------- */
 .section { position: relative; padding-block: clamp(80px, 10vw, 128px); }
 .section--tint { background: var(--bg-tint); }
-.section--night { background: var(--night); color: var(--night-text); }
-.section--night .sec-lead { color: var(--night-muted); }
 
 /* ==========================================================================
    BUTTONS
@@ -632,78 +629,6 @@ ul, ol { list-style: none; }
 .area p { margin-top: 8px; margin-bottom: 18px; color: var(--muted); font-size: 16px; line-height: 1.85; }
 
 /* ==========================================================================
-   EXPERIENCE (timeline)
-   ========================================================================== */
-.timeline { --when: 200px; --gap: 44px; position: relative; display: flex; flex-direction: column; gap: 22px; }
-.timeline::before {
-    content: '';
-    position: absolute;
-    inset-block: 10px;
-    inset-inline-start: calc(var(--when) + var(--gap) / 2);
-    width: 1px;
-    background: linear-gradient(180deg, rgba(var(--accent-rgb), .8), var(--night-line) 30%, var(--night-line));
-}
-.job { display: grid; grid-template-columns: var(--when) minmax(0, 1fr); gap: var(--gap); }
-.job__when {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding-top: 26px;
-    font-size: 15px;
-    color: var(--night-muted);
-}
-.job__now {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 12.5px;
-    color: #bff0cf;
-    background: rgba(22, 163, 74, .16);
-    border: 1px solid rgba(22, 163, 74, .35);
-}
-.job__now::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; }
-.job__card {
-    position: relative;
-    padding: 26px 28px;
-    border-radius: var(--r);
-    border: 1px solid var(--night-line);
-    background: var(--night-2);
-}
-.job__card::before {
-    content: '';
-    position: absolute;
-    top: 33px;
-    inset-inline-start: calc(var(--gap) / -2 - 6px);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--night);
-    border: 2px solid #7f93ff;
-}
-.job:first-child .job__card::before { background: #7f93ff; box-shadow: 0 0 0 5px rgba(var(--accent-rgb), .25); }
-.job__card h3 { font-size: 24px; font-weight: 700; line-height: 1.35; }
-.job__list { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
-.job__list li { position: relative; padding-inline-start: 20px; font-size: 16px; line-height: 1.85; color: #d4d6dd; }
-.job__list li::before {
-    content: '';
-    position: absolute;
-    inset-inline-start: 2px;
-    top: .78em;
-    width: 6px;
-    height: 6px;
-    border-radius: 2px;
-    background: #7f93ff;
-}
-.job__card .chips { margin-top: 18px; }
-.job--edu .job__card { border-style: dashed; border-color: rgba(255, 255, 255, .2); background: transparent; }
-.job__kind { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 14px; color: var(--night-muted); }
-.job__kind .ic { width: 18px; height: 18px; }
-.job__sub { margin-top: 4px; color: var(--night-muted); }
-
-/* ==========================================================================
    ACHIEVEMENTS
    ========================================================================== */
 .awards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -983,11 +908,6 @@ ul, ol { list-style: none; }
     .split__head { position: static; }
     .area { position: relative; top: auto; }
 
-    .timeline { --when: 1fr; }
-    .timeline::before { display: none; }
-    .job { grid-template-columns: 1fr; gap: 10px; }
-    .job__when { flex-direction: row; flex-wrap: wrap; align-items: center; padding-top: 0; }
-    .job__card::before { display: none; }
 
     .awards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .award:last-child { grid-column: 1 / -1; }
